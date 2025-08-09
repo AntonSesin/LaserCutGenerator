@@ -1,4 +1,4 @@
-package ru.antonsesin.draw;
+package ru.antonsesin.old.draw;
 
 public class CommandPath {
 
@@ -23,9 +23,10 @@ public class CommandPath {
         return command.toString();
     }
 
-    //M (moveto) - перемещает "перо" в указанные координаты
-    //M x, y (абсолютные координаты)
-    //m dx, dy (относительные координаты)
+    ///M (moveto) - перемещает "перо" в указанные координаты
+    ///M x, y (абсолютные координаты)
+    ///m dx, dy (относительные координаты)
+
     public void moveTo(double startPosX, double startPosY, Coordinates coordinates){
         switch (coordinates){
             case ABSOLUTE:

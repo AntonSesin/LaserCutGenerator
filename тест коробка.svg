@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg xmlns="http://www.w3.org/2000/svg"
+width="670mm" height="205mm"
+viewBox="0 0 670 205">
+<path d="M50.0 50.0 h56.0 v4.0 h56.0 v-4.0 h56.0 v4.0 h56.0 v-4.0 h56.0 v19.0 h-4.0 v19.0 h4.0 v19.0 h-4.0 v19.0 h4.0 v19.0 h-56.0 v-4.0 h-56.0 v4.0 h-56.0 v-4.0 h-56.0 v4.0 h-56.0 v-19.0 h4.0 v-19.0 h-4.0 v-19.0 h4.0 v-19.0 h-4.0 v-19.0 Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M54.0 10.0 h272.0 v5.2 h4.0 v5.2 h-4.0 v5.2 h4.0 v5.2 h-4.0 v5.2 h-52.0 v4.0 h-56.0 v-4.0 h-56.0 v4.0 h-56.0 v-4.0 h-52.0 v-5.2 h-4.0 v-5.2 h4.0 v-5.2 h-4.0 v-5.2 h4.0 v-5.2 Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M54.0 159.0 h52.0 v-4.0 h56.0 v4.0 h56.0 v-4.0 h56.0 v4.0 h52.0 v5.2 h4.0 v5.2 h-4.0 v5.2 h4.0 v5.2 h-4.0 v1.2000000000000002 h-272.0 v-1.2000000000000002 h-4.0 v-5.2 h4.0 v-5.2 h-4.0 v-5.2 h4.0 v-5.2 Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M10.0 50.0 h5.2 v4.0 h5.2 v-4.0 h5.2 v4.0 h5.2 v-4.0 h5.2 v19.0 h4.0 v19.0 h-4.0 v19.0 h4.0 v19.0 h-4.0 v19.0 h-5.2 v-4.0 h-5.2 v4.0 h-5.2 v-4.0 h-5.2 v4.0 h-5.2 v-82.0 a4.0,4.0 0 0 1 -4.0,-4.0  v-5.0 a4.0,4.0 0 0 1 4.0,-4.0  Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M10.5 54.0 h3.0 a1.0,1.0 0 0 1 1.0,1.0  v3.0 a1.0,1.0 0 0 1 -1.0,1.0  h-3.0 a1.0,1.0 0 0 1 -1.0,-1.0  v-3.0 a1.0,1.0 0 0 1 1.0,-1.0  Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M344.0 50.0 h5.2 v4.0 h5.2 v-4.0 h5.2 v4.0 h5.2 v-4.0 h5.2 a4.0,4.0 0 0 1 4.0,4.0  v5.0 a4.0,4.0 0 0 1 -4.0,4.0  v82.0 h-5.2 v-4.0 h-5.2 v4.0 h-5.2 v-4.0 h-5.2 v4.0 h-5.2 v-19.0 h-4.0 v-19.0 h4.0 v-19.0 h-4.0 v-19.0 h4.0 v-19.0 Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M366.5 54.0 h3.0 a1.0,1.0 0 0 1 1.0,1.0  v3.0 a1.0,1.0 0 0 1 -1.0,1.0  h-3.0 a1.0,1.0 0 0 1 -1.0,-1.0  v-3.0 a1.0,1.0 0 0 1 1.0,-1.0  Z" fill="none" stroke-width="0.2" stroke="black" />
+<path d="M384.0 50.0 h280.0 v4.0 h-5.0 v86.0 h-270.0 v-86.0 h-5.0 v-4.0 Z" fill="none" stroke-width="0.2" stroke="black" />
+</svg>

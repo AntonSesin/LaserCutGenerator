@@ -3,16 +3,16 @@ package ru.antonsesin.model;
 import ru.antonsesin.draw.Drawer;
 import ru.antonsesin.draw.command.PathCommand;
 
-/// Коробка с крышкой
-public class BoxWithLid extends Box {
+/// Простая коробка
+public class SimpleBox extends Box {
 
     double l;   // длинна отрезков length
     double w;   // длинна отрезков width
     double h;   // длинна отрезков height
 
     /// (height - thickness) чтобы высота боковушек соответствовала размеру
-    public BoxWithLid(double length, double width, double height,
-                      double thickness, int fingers) {
+    public SimpleBox(double length, double width, double height,
+                     double thickness, int fingers) {
         super(length, width, height - thickness, thickness, fingers);
     }
 
@@ -24,16 +24,13 @@ public class BoxWithLid extends Box {
         w = width / count;      // вычисляем длинну отрезков width
         h = height / count;     // вычисляем длинну отрезков height
 
-
         Drawer drawer = createDrawer();
 
-        // Пример генерации дна коробки
         generateBottom(drawer);
         generateBack(drawer);
         generateFront(drawer);
         generateLeft(drawer);
         generateRight(drawer);
-        generateTop(drawer);
 
         return drawer.generateSVG();
     }
@@ -44,25 +41,11 @@ public class BoxWithLid extends Box {
         double y = 10 + height + thickness + 10;
         PathCommand path = drawer.createPath().moveTo(x, y);
         FingerJointBuilder.createHorizontalFingers(path, h, fingers, thickness, false);
-        path.ellipticalArc(thickness, thickness, 0, 0, 1, thickness, thickness)
-                .verticalLine(thickness + 1)
-                .ellipticalArc(thickness, thickness, 0, 0, 1, -thickness, thickness)
-                .verticalLine(width - (thickness * 2) - thickness - 1);
+        path.verticalLine(width);
         FingerJointBuilder.createHorizontalFingers(path, -h, fingers, -thickness, false);
         FingerJointBuilder.createVerticalFingers(path, -w, fingers, thickness, false);
         path.closePath();
 
-        PathCommand path1 = drawer.createPath()
-                .moveTo(x + height - thickness + 0.5, y + thickness)
-                .horizontalLine(thickness - 1)
-                .ellipticalArc(1, 1, 0, 0, 1, 1, 1)
-                .verticalLine(thickness - 1)
-                .ellipticalArc(1, 1, 0, 0, 1, -1, 1)
-                .horizontalLine(-(thickness - 1))
-                .ellipticalArc(1, 1, 0, 0, 1, -1, -1)
-                .verticalLine(-(thickness - 1))
-                .ellipticalArc(1, 1, 0, 0, 1, 1, -1)
-                .closePath();
     }
 
     /// Рисуем левую стенку
@@ -73,22 +56,7 @@ public class BoxWithLid extends Box {
         FingerJointBuilder.createHorizontalFingers(path, h, fingers, thickness, false);
         FingerJointBuilder.createVerticalFingers(path, w, fingers, -thickness, false);
         FingerJointBuilder.createHorizontalFingers(path, -h, fingers, -thickness, false);
-        path.verticalLine(-(width - (thickness * 2) - thickness - 1))
-                .ellipticalArc(thickness, thickness, 0, 0, 1, -thickness, -thickness)
-                .verticalLine(-(thickness + 1))
-                .ellipticalArc(thickness, thickness, 0, 0, 1, thickness, -thickness)
-                .closePath();
-        PathCommand path1 = drawer.createPath()
-                .moveTo(x + 0.5, y + thickness)
-                .horizontalLine(thickness - 1)
-                .ellipticalArc(1, 1, 0, 0, 1, 1, 1)
-                .verticalLine(thickness - 1)
-                .ellipticalArc(1, 1, 0, 0, 1, -1, 1)
-                .horizontalLine(-(thickness - 1))
-                .ellipticalArc(1, 1, 0, 0, 1, -1, -1)
-                .verticalLine(-(thickness - 1))
-                .ellipticalArc(1, 1, 0, 0, 1, 1, -1)
-                .closePath();
+        path.verticalLine(-width).closePath();
     }
 
     /// Рисуем переднюю стенку
@@ -98,25 +66,9 @@ public class BoxWithLid extends Box {
         PathCommand path = drawer.createPath()
                 .moveTo(x, y);
         FingerJointBuilder.createHorizontalFingers(path, l, fingers, -thickness, true);
-        // custom fingers
-        path.verticalLine(h);
-        for (int i = 0; i < fingers; i++) {
-            path.horizontalLine(thickness)
-                    .verticalLine(h)
-                    .horizontalLine(-thickness);
-            if (i == fingers - 1) {
-                path.verticalLine(h - thickness);
-            } else path.verticalLine(h);
-        }
+        FingerJointBuilder.createVerticalFingers(path, h, fingers, -thickness, false);
         path.horizontalLine(-(length - (thickness * 2)));
-        // custom fingers
-        path.verticalLine(-(h - thickness));
-        for (int i = 0; i < fingers; i++) {
-            path.horizontalLine(-thickness)
-                    .verticalLine(-h)
-                    .horizontalLine(thickness)
-                    .verticalLine(-h);
-        }
+        FingerJointBuilder.createVerticalFingers(path, -h, fingers, thickness, false);
         path.closePath();
     }
 
@@ -145,21 +97,4 @@ public class BoxWithLid extends Box {
         path.closePath();
     }
 
-    /// Рисуем крышку
-    private void generateTop(Drawer drawer) {
-        double x = 10 + height + thickness + 10 + length + 10 + height + thickness + 10 + thickness;
-        double y = 10 + height + thickness + 10;
-
-        PathCommand path = drawer.createPath()
-                .moveTo(x, y)
-                .horizontalLine(length)
-                .verticalLine(thickness)
-                .horizontalLine(-(thickness + 1))
-                .verticalLine(width - thickness - thickness - 1.0)
-                .horizontalLine(-(length - thickness - thickness - 2))
-                .verticalLine(-(width - thickness - thickness - 1.0))
-                .horizontalLine(-(thickness + 1))
-                .verticalLine(-thickness)
-                .closePath();
-    }
 }

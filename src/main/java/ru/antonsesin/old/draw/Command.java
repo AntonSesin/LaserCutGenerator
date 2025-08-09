@@ -1,4 +1,4 @@
-package ru.antonsesin.draw;
+package ru.antonsesin.old.draw;
 
 public enum Command {
     rect,       //для прямоугольников;
